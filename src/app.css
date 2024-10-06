@@ -1,0 +1,23 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+    @font-face {
+        font-family: "Mango";
+        src: url(/fonts/mango-grotesque.ttf);
+        font-style: normal;
+        font-weight: 100 900;
+    }
+
+    @font-face {
+        font-family: "Nohemi";
+        src: url(/fonts/nohemi.ttf);
+        font-style: normal;
+        font-weight: 100 900;
+    }
+
+    body {
+        @apply font-body bg-emerald-950 text-orange-500
+    }
+}
