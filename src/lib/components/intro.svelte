@@ -6,13 +6,19 @@
 	import { Autoplay, EffectCards } from 'swiper/modules';
 
 	onMount(() => {
-		const italicChars = gsap.utils.toArray('h1 em');
-		gsap.to(italicChars, {
-			skewX: '-10deg',
-			duration: 1,
-			ease: 'power2.in'
+		const ctx = gsap.context(() => {
+			const italicChars = gsap.utils.toArray('.heading em');
+			gsap.to(italicChars, {
+				skewX: '-10deg',
+				marginLeft: '0em',
+				marginRight: '0.03em',
+				duration: 1,
+				ease: 'power2.in',
+				stagger: 1
+			});
+			gsap.to('.cards', { rotate: '-10deg', duration: 1, ease: 'power2.in' });
 		});
-		gsap.to('.cards', { rotate: '-10deg', duration: 1, ease: 'power2.in' });
+
 		const introSwiper = new Swiper('.intro-swiper', {
 			effect: 'cards',
 			loop: true,
@@ -27,33 +33,32 @@
 			grabCursor: true,
 			modules: [EffectCards, Autoplay]
 		});
+
+		return () => {
+			introSwiper.destroy(true, true);
+			ctx.revert();
+		};
 	});
 </script>
 
 <section class="relative mt-8">
-	<h1
-		class=" flex max-h-screen flex-col justify-center font-display font-bold uppercase leading-[0.8] text-orange-50 ~/lg:~text-[12rem]/[30rem]"
-	>
-		<span class="inline-flex gap-2">T<em class="inline-block not-italic">h</em>e</span>
-		<span class="ml-auto inline-flex gap-2"><em class="inline-block not-italic">A</em>rtist</span>
-	</h1>
-	<div class="left-[35rem] top-20 hidden w-1/2 flex-col gap-4 text-2xl lg:absolute lg:flex">
-		<p>
-			Welcome to the official website of the artist. Here you can find all the information about the
-			artist and his work.
-		</p>
-		<p>
-			Welcome to the official website of the artist. Here you can find all the information about the
-			artist and his work.
-		</p>
-	</div>
-	<p class="lg:hidden">
-		Welcome to the official website of the artist. Here you can find all the information about the
-		artist and his work.
-	</p>
 	<div
-		class="cards absolute max-lg:right-4 max-lg:top-4 max-sm:-top-6 max-sm:right-10 lg:bottom-20 lg:left-32 lg:block"
+		class="heading flex flex-wrap items-center justify-between font-display font-bold uppercase leading-none text-primary ~/lg:~text-[12rem]/[30rem]"
 	>
+		<span class="-my-12 inline-flex gap-2">T<em class="inline-block not-italic">h</em>e</span>
+		<span class="-my-12 inline-flex gap-2">Ma<em class="inline-block not-italic">g</em>i</span>
+		<span class="-my-12 inline-flex gap-2">-cal</span>
+		<p class="-mt-24 w-1/2 text-left font-body text-2xl normal-case text-secondary">
+			I’m Muzammil Loya, an Pakistani web developer working worldwide and challenging boundaries of
+			conceptual and innovative digital design.
+		</p>
+		<span class="w-1/5"></span>
+		<span class="-my-12 inline-flex gap-2"
+			>A<em class="inline-block not-italic">R</em>ti<em class="inline-block not-italic">s</em
+			>t</span
+		>
+	</div>
+	<div class="cards absolute bottom-0 left-4 -z-10">
 		<div class="swiper intro-swiper max-lg:w-40">
 			<siv class="swiper-wrapper">
 				<div class="swiper-slide">
@@ -85,8 +90,8 @@
 		height: 150px;
 		overflow: visible;
 		@media screen and (min-width: 1024px) {
-			width: 200px;
-			height: 300px;
+			width: 300px;
+			height: 500px;
 		}
 	}
 	.swiper-slide {

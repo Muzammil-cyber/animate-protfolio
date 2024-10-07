@@ -21,6 +21,12 @@
 	});
 </script>
 
-<main class=" container">
+<main class="container">
 	<slot></slot>
 </main>
+
+<style lang="postcss">
+	:global(section) {
+		@apply mb-12;
+	}
+</style>

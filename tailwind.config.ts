@@ -20,6 +20,17 @@ export default {
 				center: true,
 				padding: '1rem',
 			},
+			colors: {
+				primary: '#EB3678',
+				'primary-background': '#102C57',
+				secondary: '#FB773C',
+				'secondary-background': 'rgba(0, 111, 145, 0.40)',
+				'muted': '#FFCBCB'
+			},
+			borderRadius: {
+				DEFAULT: '0.75rem'
+			},
+
 		}
 	},
 
