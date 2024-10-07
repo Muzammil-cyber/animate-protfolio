@@ -17,7 +17,7 @@
 				stagger: 1
 			});
 			gsap.to('.cards', { rotate: '-10deg', duration: 1, ease: 'power2.in' });
-		});
+		}, '.intro-section');
 
 		const introSwiper = new Swiper('.intro-swiper', {
 			effect: 'cards',
@@ -41,7 +41,7 @@
 	});
 </script>
 
-<section class="relative mt-8">
+<section class="intro-section relative mt-8">
 	<div
 		class="heading flex flex-wrap items-center justify-between font-display font-bold uppercase leading-none text-primary ~/lg:~text-[12rem]/[30rem]"
 	>
