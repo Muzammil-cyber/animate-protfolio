@@ -10,4 +10,12 @@ declare global {
 	}
 }
 
-export {};
+interface ProjectType {
+	id: string;
+	name: string;
+	title: string;
+	description: string[];
+	link?: string;
+	linkText?: string;
+	image: string;
+}

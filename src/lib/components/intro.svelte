@@ -48,7 +48,7 @@
 		<span class="-my-12 inline-flex gap-2">T<em class="inline-block not-italic">h</em>e</span>
 		<span class="-my-12 inline-flex gap-2">Ma<em class="inline-block not-italic">g</em>i</span>
 		<span class="-my-12 inline-flex gap-2">-cal</span>
-		<p class="-mt-24 w-1/2 text-left font-body text-2xl normal-case text-secondary">
+		<p class="-mt-24 w-1/2 text-left font-body text-2xl normal-case text-muted">
 			I’m Muzammil Loya, an Pakistani web developer working worldwide and challenging boundaries of
 			conceptual and innovative digital design.
 		</p>

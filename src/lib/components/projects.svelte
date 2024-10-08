@@ -2,6 +2,34 @@
 	import gsap from 'gsap/dist/gsap';
 	import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
+	import Project from './project.svelte';
+
+	const Cards: ProjectType[] = [
+		{
+			id: '1',
+			title: 'Some Title',
+			name: 'Some Name',
+			description: [
+				'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas rem cupiditate iure provident quia sapiente aliquid ducimus, distinctio id enim aliquam ratione asperiores in exercitationem minus perspiciatis, porro eum sunt.',
+				'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas rem cupiditate iure provident quia sapiente aliquid ducimus, distinctio id enim aliquam ratione asperiores in exercitationem minus perspiciatis, porro eum sunt.'
+			],
+			link: 'https://www.google.com',
+			linkText: 'Enter Website',
+			image: 'https://via.placeholder.com/150'
+		},
+		{
+			id: '2',
+			title: 'Some Title',
+			name: 'Some Name',
+			description: [
+				'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas rem cupiditate iure provident quia sapiente aliquid ducimus, distinctio id enim aliquam ratione asperiores in exercitationem minus perspiciatis, porro eum sunt.',
+				'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas rem cupiditate iure provident quia sapiente aliquid ducimus, distinctio id enim aliquam ratione asperiores in exercitationem minus perspiciatis, porro eum sunt.'
+			],
+			link: 'https://www.google.com',
+			linkText: 'Discover Website',
+			image: 'https://via.placeholder.com/150'
+		}
+	];
 
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
@@ -56,5 +84,11 @@
 			Showcase of diverse works reflecting <br /> a signature approach to design and development
 		</p>
 	</div>
-	<div class="min-h-screen"></div>
+	<div class="min-h-screen">
+		<div class="flex flex-col items-center justify-center gap-8">
+			{#each Cards as data (data.id)}
+				<Project {data} />
+			{/each}
+		</div>
+	</div>
 </section>

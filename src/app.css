@@ -18,10 +18,36 @@
     }
 
     body {
-        @apply font-body bg-primary-background text-secondary
+        @apply font-body bg-primary-background
     }
 
     h1, h2, h3, h4, h5, h6 {
         @apply font-display text-primary
+    }
+
+    p {
+        @apply text-muted
+    }
+}
+
+@layer components {
+    .btn {
+        @apply relative overflow-hidden border border-primary text-primary rounded-sm inline-flex items-center justify-center py-2 px-2 text-2xl uppercase font-display leading-[0.85] transition-colors duration-500
+    }
+
+    .btn>span {
+        @apply block leading-[0.85] whitespace-nowrap
+    }
+
+    .btn::after {
+        @apply content-[''] block w-full h-full absolute top-0 left-0 bg-primary translate-y-full -z-10 transition-transform duration-200
+    }
+
+    .btn:hover {
+        @apply text-primary-background
+    }
+
+    .btn:hover::after {
+        @apply translate-y-0
     }
 }
